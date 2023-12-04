@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "argon-react-native",
+    "slug": "argon-free-react-native",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.7.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "notification": {
+      "icon": "./assets/icon.png",
+      "color": "#000000"
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "description": "Argon React Native, based on Argon Design System. Coded by Creative Tim",
+    "android": {
+      "package": "com.james0302.argonfreereactnative",
+      // "googleSignIn": {
+      //   "behavior": "web",
+      //   "webClientId": "314426285261-fbaai08c12die6nuslffsipogotnb9ri.apps.googleusercontent.com"
+      // },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC1eHh9AKj4G_KUwjs0sjYYvnQlDzWPTAU"
+        }
+      }
+    },
+    "extra": {
+      "stripePublishableKey": "pk_test_51O2Nz1Bk4o9NggAuwAMXzY1YtZILlPPqpK8Xb7GJtZvlvwBeyJGBhfxsEjcpweBEIp4Cx5j2IeGnSakzFWFzstKI008HVgsJjq",
+      "eas": {
+        "projectId": "6ec8de95-1965-4def-bbe2-20029b69abb9"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-newcrimeappex-dev-90535-authRole",
+      "UnauthRoleArn": "arn:aws:iam::470876216373:role/amplify-newcrimeappex-dev-90535-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::470876216373:role/amplify-newcrimeappex-dev-90535-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-newcrimeappex-dev-90535-deployment",
+      "UnauthRoleName": "amplify-newcrimeappex-dev-90535-unauthRole",
+      "StackName": "amplify-newcrimeappex-dev-90535",
+      "StackId": "arn:aws:cloudformation:us-east-1:470876216373:stack/amplify-newcrimeappex-dev-90535/b1dbccb0-8fa2-11ee-af9f-0e11297ecb0d",
+      "AmplifyAppId": "d15z89igt6t9p7"
+    },
+    "categories": {
+      "api": {
+        "newcrimeappex": {}
+      },
+      "auth": {
+        "newcrimeappexa2d87710": {}
+      }
+    }
+  }
+}

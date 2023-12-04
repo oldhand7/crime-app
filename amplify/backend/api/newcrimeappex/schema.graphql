@@ -1,0 +1,68 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY {
+  globalAuthRule: AuthRule = { allow: public }
+} # FOR TESTING ONLY!
+type User @model {
+  id: ID!
+  name: String
+  image: String
+  firstName: String
+  lastName: String
+  lat: Float
+  long: Float
+  status: String
+  subscriptionID: ID
+  dueDay: String
+  crimes: [Crime] @hasMany(indexName: "byRepoId", fields: ["id"])
+  messages: [Message] @hasMany(indexName: "byUser", fields: ["id"])
+
+}
+
+type Crime @model {
+  id: ID! @index(name: "byRepoId", sortKeyFields: ["reporterId"])
+  title: String
+  content: String
+  lat: Float
+  long: Float
+  reporterId: ID
+  reporter: User @belongsTo(fields: ["reporterId"])
+}
+
+
+
+
+type Message @model  {
+  id: ID! @index(name: "byUser")
+  sender_id: ID
+  receiver_id: ID
+  text: String
+  attachment_url: String
+  timestamp: String
+  sender: User @belongsTo(fields: ["sender_id"])
+  receiver: User @belongsTo(fields: ["receiver_id"])
+}
+
+
+
+type Subscription {
+  id: ID!
+  setupIntentId: String
+}
+
+input CreateSubscriptionInput {
+  setupIntentId: String
+}
+
+type Mutation {
+  createSubscription(input: CreateSubscriptionInput): Subscription
+}
+
+type SubscriptionResponse {
+  subscriptionID: String
+  end: Int
+}
+
+type Query {
+  rangeSearchCrimes(long_min: Float, long_max: Float): [Crime]
+}

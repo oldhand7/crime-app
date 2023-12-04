@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "873043516871",
+    "project_id": "crime-app-56126",
+    "storage_bucket": "crime-app-56126.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873043516871:android:ecb44dbea9eef92df18de2",
+        "android_client_info": {
+          "package_name": "com.a7a.argonfreereactnative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeb157BdQVvUpOwML3bGHLYhWVRMoEzYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

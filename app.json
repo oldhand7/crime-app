@@ -1,30 +1,49 @@
 {
   "expo": {
-    "name": "crime-app-ex",
-    "slug": "crime-app-ex",
-    "version": "1.0.0",
+    "name": "argon-react-native",
+    "slug": "crime",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.7.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "notification": {
+      "icon": "./assets/icon.png",
+      "color": "#000000"
+    },
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.james0302.argonfreereactnative"
     },
+    "description": "Argon React Native, based on Argon Design System. Coded by Creative Tim",
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+      "package": "com.james0302.argonfreereactnative",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC1eHh9AKj4G_KUwjs0sjYYvnQlDzWPTAU"
+        }
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "extra": {
+      "stripePublishableKey": "pk_test_51O2Nz1Bk4o9NggAuwAMXzY1YtZILlPPqpK8Xb7GJtZvlvwBeyJGBhfxsEjcpweBEIp4Cx5j2IeGnSakzFWFzstKI008HVgsJjq",
+      "eas": {
+        "projectId": "1b6ccfb1-a100-4513-8c52-7b111a5bbcd9"
+      }
+    },
+    "owner": "curtiswilmoth"
   }
 }
