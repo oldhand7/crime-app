@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "argon-react-native",
-    "slug": "crime",
+    "slug": "argon-free-react-native",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -41,9 +41,9 @@
     "extra": {
       "stripePublishableKey": "pk_test_51O2Nz1Bk4o9NggAuwAMXzY1YtZILlPPqpK8Xb7GJtZvlvwBeyJGBhfxsEjcpweBEIp4Cx5j2IeGnSakzFWFzstKI008HVgsJjq",
       "eas": {
-        "projectId": "1b6ccfb1-a100-4513-8c52-7b111a5bbcd9"
+        "projectId": "6ec8de95-1965-4def-bbe2-20029b69abb9"
       }
     },
-    "owner": "curtiswilmoth"
+    "owner": "oldhand"
   }
 }
