@@ -8,8 +8,6 @@ import { useState, useCallback } from "react";
 import { Button, Text } from "galio-framework";
 import { API, Auth } from "aws-amplify";
 import * as mutations from "../graphql/mutations";
-// import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin';
-
 const { width, height } = Dimensions.get("screen");
 
 const EMAIL_REGEX =
@@ -52,34 +50,13 @@ const Register = () => {
           },
         },
       });
-      //Navigate to confirm email page if successful...
       navigation.navigate("ConfirmEmail", { username });
     } catch (error) {
-      console.log("error -> ", error);
       Alert.alert("Oops", error.message);
     }
-
     setLoading(false);
-    //send new user to the DB
   };
-  async function signInWithGoogle() {
-    // try {
-    //   await GoogleSignin.hasPlayServices();
-    //   const userInfo = await GoogleSignin.signIn();
-    //   console.log(userInfo);
-    //   // Use the user info in your app
-    // } catch (error) {
-    //   if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-    //     console.log('User cancelled the login flow.');
-    //   } else if (error.code === statusCodes.IN_PROGRESS) {
-    //     console.log('Login flow already in progress.');
-    //   } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-    //     console.log('Play services not available');
-    //   } else {
-    //     console.log('Something went wrong:', error.message);
-    //   }
-    // }
-  }
+
 
   useEffect(() => {
     (async () => {
@@ -92,10 +69,7 @@ const Register = () => {
         accountName: '',
       });
     })()
-
-  }
-
-    , []);
+  }, []);
 
   const onSignIn = () => {
     navigation.navigate("Login");
@@ -188,25 +162,6 @@ const Register = () => {
           {loading ? "Loading" : "Sign Up"}
         </Text>
       </Button>
-
-      {/* 
-
-      <Button
-        round
-        color={argonTheme.COLORS.PRIMARY}
-        style={{ width: width - 40, marginTop: 50 }}
-        onPress={signUpWithGoogle}
-      >
-        <Text bold style={{ color: argonTheme.COLORS.WHITE }}>
-          {loading ? "Loading" : "Sign Up With Google"}
-        </Text>
-      </Button> */}
-      {/* <GoogleSigninButton
-        style={{ width: 192, height: 48 }}
-        size={GoogleSigninButton.Size.Wide}
-        color={GoogleSigninButton.Color.Dark}
-        onPress={signInWithGoogle}
-      /> */}
       <Button
         onPress={onSignIn}
         round

@@ -65,13 +65,7 @@ export default function OnboardingStack(props) {
           headerShown: false,
         }}
       />
-      {/* <Drawer.Screen
-        name="statistics"
-        component={Statistics}
-        options={{
-          headerShown: false,
-        }}
-      /> */}
+
       <Drawer.Screen
         name="Login"
         component={Login}

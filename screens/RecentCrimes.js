@@ -92,14 +92,6 @@ export default function RecentCrimes() {
         const res = await API.graphql({ query: queries.listCrimes });
         let crimeList = res.data.listCrimes.items;
         let result = [];
-        // for (let index = 0; index < crimeList.length; index++) {
-        //   const crime = crimeList[index];
-        //   crimeList[index]["address"] = await getAddress({
-        //     lat: crime.lat,
-        //     long: crime.long,
-        //   });
-        // }
-        console.log("===========", crimeList);
         setCrimes(crimeList);
         setChecked("first");
         setIsLoading(false)
@@ -289,11 +281,6 @@ export default function RecentCrimes() {
                   borderRadius: 16
                 }}
               />
-              <Block style="margin-top: 50  ">
-                {/* <PureChartBar data={data} type="line" width="500" color="#000"showEvenNumberXaxisLabel={false}/> */}
-
-              </Block>
-
             </ScrollView>
           </ImageBackground>
         </Block>)

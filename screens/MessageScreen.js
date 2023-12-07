@@ -114,10 +114,6 @@ export default function MessageScreen({ route }) {
           ))}
         </View>
         <View style={styles.inputContainer}>
-          {/* <TouchableOpacity style={styles.call_btn} onPress={() => handleCall()}>
-            <Icon name="phone" size={20} color="#fff" />
-          </TouchableOpacity> */}
-
           <TextInput
             style={styles.input}
             placeholder="Type your message here..."

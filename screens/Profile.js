@@ -334,73 +334,10 @@ export default function Profile() {
                     />
                   )}
                 </TouchableOpacity>
-                {/* 
-                <Image
-                  source={{ uri: Images.ProfilePicture }}
-                  style={styles.avatar}
-                /> */}
+
               </Block>
               <Block style={styles.info}>
-                {/* <Block
-                  middle
-                  row
-                  space="evenly"
-                  style={{ marginTop: 20, paddingBottom: 24 }}
-                >
-                  <Button
-                    small
-                    style={{ backgroundColor: argonTheme.COLORS.INFO }}
-                  >
-                    CONNECT
-                  </Button>
-                  <Button
-                    small
-                    style={{ backgroundColor: argonTheme.COLORS.DEFAULT }}
-                  >
-                    MESSAGE
-                  </Button>
-                </Block> */}
-                {/* <Block row space="between">
-                  <Block middle>
-                    <Text
-                      bold
-                      size={18}
-                      color="#525F7F"
-                      style={{ marginBottom: 4 }}
-                    >
-                      2K
-                    </Text>
-                    <Text size={12} color={argonTheme.COLORS.TEXT}>
-                      Orders
-                    </Text>
-                  </Block>
-                  <Block middle>
-                    <Text
-                      bold
-                      color="#525F7F"
-                      size={18}
-                      style={{ marginBottom: 4 }}
-                    >
-                      10
-                    </Text>
-                    <Text size={12} color={argonTheme.COLORS.TEXT}>
-                      Photos
-                    </Text>
-                  </Block>
-                  <Block middle>
-                    <Text
-                      bold
-                      color="#525F7F"
-                      size={18}
-                      style={{ marginBottom: 4 }}
-                    >
-                      89
-                    </Text>
-                    <Text size={12} color={argonTheme.COLORS.TEXT}>
-                      Comments
-                    </Text>
-                  </Block>
-                </Block> */}
+
               </Block>
               <Block flex>
                 <Block middle style={styles.nameInfo}>
@@ -430,26 +367,7 @@ export default function Profile() {
                     Settings
                   </Text>
                 </Block>
-                {/* <Block middle>
-                  <Text
-                    size={16}
-                    color="#525F7F"
-                    style={{ textAlign: "center" }}
-                  >
-                    An artist of considerable range, Jessica name taken by
-                    Melbourne …
-                  </Text>
-                  <Button
-                    color="transparent"
-                    textStyle={{
-                      color: "#233DD2",
-                      fontWeight: "500",
-                      fontSize: 16,
-                    }}
-                  >
-                    Show more
-                  </Button>
-                </Block> */}
+
                 <Block row space="between">
 
                   <Text
@@ -508,14 +426,7 @@ export default function Profile() {
                   </Text>
                   {!user.subscriptionID ? (
                     <Block row>
-                      {/* <Text
-                        bold
-                        size={16}
-                        color="#525F7F"
-                        style={{ marginTop: 12 }}
-                      >
-                        Basic
-                      </Text> */}
+
                       <Button
                         large
                         style={{ backgroundColor: argonTheme.COLORS.INFO }}

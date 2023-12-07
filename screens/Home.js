@@ -17,14 +17,13 @@ import { useNavigation } from "@react-navigation/native";
 import ReportBottomSheet from "../components/features/bottomSheet/ReportBottomSheet";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Amplify } from "aws-amplify";
-// import { GoogleSignIn} from 'expo-google-sign-in';
-// import awsExports from "./aws-exports";
+
 Amplify.configure({
   "aws_project_region": "us-east-1",
-  "aws_appsync_graphqlEndpoint": "https://jwjld4m7hffildg2kef67yckw4.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_graphqlEndpoint": "https://5kkx2begpbawrlfxnakook622i.appsync-api.us-east-1.amazonaws.com/graphql",
   "aws_appsync_region": "us-east-1",
   "aws_appsync_authenticationType": "API_KEY",
-  "aws_appsync_apiKey": "da2-sswkjjmryza33ifsi47dr5w2d4",
+  "aws_appsync_apiKey": "da2-xwm6di3en5b6pgpqrca3mmlvbu",
   "aws_cognito_region": "us-east-1",
   "aws_user_pools_id": "us-east-1_sWM0Xg891",
   "aws_user_pools_web_client_id": "7me598necuptodkkeo2f8qml3",
@@ -41,20 +40,17 @@ Amplify.configure({
     "redirectSignOut": "myapp://",
     "responseType": "code"
   },
-
 });
+
 import { API } from "aws-amplify";
 import * as queries from "../graphql/queries";
 import { onCreateCrime } from "../graphql/subscriptions";
 import { graphqlOperation } from "aws-amplify";
-
 import { useAtom } from "jotai";
 import userDetail from "../store/index";
 import { SHOW_LOCATION, SHOW_NOTIFICATION } from "../constant/constant";
 
 import { getAddress } from "../util/address";
-
-
 
 const { width, height } = Dimensions.get("screen");
 
@@ -90,14 +86,7 @@ const Home = () => {
     useState(false);
 
   const onConfigureGoogleSignIn = async () => {
-
-    // GoogleSignin.configure({ 
-    //   webClientId: '314426285261-fbaai08c12die6nuslffsipogotnb9ri.apps.googleusercontent.com', 
-    //   offlineAccess: true 
-    //  }); 
-
   };
-
 
   useEffect(() => {
     if (settings.showLocation && user) {
@@ -105,40 +94,7 @@ const Home = () => {
       setInitLoc({ ...initLoc, lat: user.lat, long: user.long })
     }
   }, [settings, user])
-  // const onGoogleSignIn = async () => {
-  //   try {
-  //     // let res = await GoogleSignIn.askForPlayServicesAsync();
-  //     // console.log("res ", res);
-  //     // if (type === "success") {
-  //     //   this._syncUserWithStateAsync();
-  //     // }
-  //   } catch ({ message }) {
-  //     alert("login: Error:" + message);
-  //   }
-  //   try {
-  //     const result = await GoogleSignIn.logInAsync({
-  //       androidClientId: "YOUR_ANDROID_CLIENT_ID_FROM_GOOGLE",
-  //       scopes: ["profile", "email"],
-  //     });
-  //     console.log(result);
-  //     if (result.type === "success") {
-  //       // User has successfully authenticated with Google
-  //       const credential = firebase.auth.GoogleAuthProvider.credential(
-  //         result.idToken,
-  //         result.accessToken
-  //       );
-  //       firebase
-  //         .auth()
-  //         .signInWithCredential(credential)
-  //         .then(() => console.log("User logged in with Firebase!"))
-  //         .catch((error) => console.log(error));
-  //     } else {
-  //       console.log("Login request was cancelled.");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+
   useEffect(() => {
     (async () => {
       await onConfigureGoogleSignIn();
@@ -163,7 +119,6 @@ const Home = () => {
             console.log(error);
           }
 
-          // Implement logic to handle the new data (e.g., update your app state)
         },
         error: (error) => {
           console.error("Error subscribing to onCreateData:", error);
@@ -172,7 +127,6 @@ const Home = () => {
     );
 
     return () => {
-      // Clean up the subscription when the component unmounts
       subscription.unsubscribe();
     };
   }, []);
@@ -260,13 +214,6 @@ const Home = () => {
     setCrimes([...crimes, newCrime]);
   };
 
-  //   var pinIcon = new google.maps.MarkerImage(
-  //     "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FFFF00",
-  //     null, /* size is determined at runtime */
-  //     null, /* origin is 0,0 */
-  //     null, /* anchor is bottom center of the scaled image */
-  //     new google.maps.Size(42, 68)
-  // );
 
   return (
     <Block flex center style={styles.home}>
@@ -279,18 +226,7 @@ const Home = () => {
         ) : (
           <Block flex>
             <View style={styles.button}>
-              {/* <Button
-                onPress={this.openPanel}
-                style={{
-                  width: "auto",
-                  height: "auto",
-                  paddingHorizontal: 12,
-                  paddingVertical: 10,
-                  backgroundColor: "#fff",
-                }}
-              >
-                <FontIcon name="bars" size={18} />
-              </Button> */}
+
             </View>
 
             {user !== null && (
@@ -397,36 +333,6 @@ const Home = () => {
                     </Text>
                   </Block>
                 </Button>
-                {/* <GoogleSigninButton 
- style={{ width: 192, height: 48 }} 
- size={GoogleSigninButton.Size.Wide} 
- color={GoogleSigninButton.Color.Light} 
- onPress={signIn} 
-/>  */}
-                {/* <Button
-                  round
-                  color={argonTheme.COLORS.GREY_COLOR}
-                  onPress={onGoogleSignIn}
-                  style={{ width: width - 40 }}
-                >
-                  <Block flex center row>
-                    <FontIcon
-                      name="envelope"
-                      color={argonTheme.COLORS.PRIMARY}
-                      size={16}
-                    />
-                    <Text
-                      bold
-                      style={{
-                        color: argonTheme.COLORS.PRIMARY,
-                        paddingLeft: 5,
-                      }}
-                    >
-                      Sign up with Email
-                    </Text>
-                  </Block>
-                </Button> */}
-
                 <Block
                   flex
                   center
@@ -567,13 +473,7 @@ const Home = () => {
                   // icon={icon}
                   ></Marker>
                 ))}
-              {/* {user && <Marker
-                key={`marker-me}`}
-                coordinate={{ latitude: user.lat, longitude: user.long }}
-                title={"mylocation"}
-                description={"location"}
-              // icon={icon}
-              ></Marker>} */}
+
               {user && user.subscriptionID && (
                 crimes.map((crime, index) => (
 
